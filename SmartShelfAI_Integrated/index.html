@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SmartShelf - Discover books, build new skills, and find your next favorite read. Your personal book discovery space.">
+    <title>SmartShelf | Discover Something Wonderful</title>
+    
+    <!-- Add a favicon placeholder to prevent 404 errors in the console -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="navbar" id="home">
+    <a href="#home" class="logo">Smart<span>Shelf</span><b>.</b></a>
+
+    <nav aria-label="Main Navigation">
+        <a href="#home">Home</a>
+        <a href="#featured">Discover</a>
+        <a href="#catalogue">Book Catalogue</a>
+        <a href="#favorites">My Favourites <span id="favoriteCount" class="nav-count" aria-live="polite">0</span></a>
+    </nav>
+</header>
+
+<main>
+    <!-- HERO SECTION -->
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+            <span class="pill-label">✦ YOUR PERSONAL BOOK DISCOVERY SPACE</span>
+
+            <h1 id="hero-title">Somewhere between<br>
+                <span>the pages,</span><br>
+                you'll find your next big idea.
+            </h1>
+
+            <p class="hero-text">
+                Discover books that match your curiosity, build new skills,
+                and find your next favourite read.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#catalogue" class="primary-button">Explore Books ↗</a>
+                <button class="secondary-button" id="surpriseButton">
+                    ✨ Surprise Me
+                </button>
+            </div>
+
+            <div class="hero-proof">
+                <span>📚 Learn something new</span>
+                <span>♡ Save your favourites</span>
+            </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+            <div class="art-orbit orbit-one"></div>
+            <div class="art-orbit orbit-two"></div>
+
+            <div class="floating-note note-top">Your next chapter ✨</div>
+
+            <div class="hero-books">
+                <div class="hero-book hero-book-back">THINK<br>CREATE</div>
+                <div class="hero-book hero-book-middle">KEEP<br>LEARNING</div>
+                <div class="hero-book hero-book-front">
+                    <span>THE</span>
+                    <strong>ART OF<br>DISCOVERY</strong>
+                    <small>ONE PAGE AT A TIME</small>
+                </div>
+            </div>
+
+            <div class="floating-note note-bottom">A little curiosity goes far ♡</div>
+        </div>
+    </section>
+
+    <!-- QUICK STATS -->
+    <section class="stats-strip" aria-label="Platform Statistics">
+        <div>
+            <strong id="totalBooks">24+</strong>
+            <span>Books to explore</span>
+        </div>
+        <div>
+            <strong id="totalCategories">6</strong>
+            <span>Learning categories</span>
+        </div>
+        <div>
+            <strong>∞</strong>
+            <span>Things to discover</span>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section categories-section" id="categories">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">FOLLOW YOUR CURIOSITY</p>
+                <h2>What are we exploring today?</h2>
+                <p>Pick a topic and find something worth learning.</p>
+            </div>
+        </div>
+
+        <div class="category-grid" aria-label="Book Categories">
+            <button class="category-card category-purple" data-category="programming" aria-controls="bookContainer">
+                <span class="category-icon" aria-hidden="true">💻</span>
+                <strong>Programming</strong>
+                <small>Build something brilliant</small>
+                <span class="category-arrow" aria-hidden="true">↗</span>
+            </button>
+
+            <button class="category-card category-peach" data-category="web-development" aria-controls="bookContainer">
+                <span class="category-icon" aria-hidden="true">🎨</span>
+                <strong>Web Development</strong>
+                <small>Bring ideas to the web</small>
+                <span class="category-arrow" aria-hidden="true">↗</span>
+            </button>
+
+            <button class="category-card category-green" data-category="database" aria-controls="bookContainer">
+                <span class="category-icon" aria-hidden="true">🗃️</span>
+                <strong>Databases</strong>
+                <small>Make sense of data</small>
+                <span class="category-arrow" aria-hidden="true">↗</span>
+            </button>
+
+            <button class="category-card category-blue" data-category="ai-ml" aria-controls="bookContainer">
+                <span class="category-icon" aria-hidden="true">🤖</span>
+                <strong>AI & Machine Learning</strong>
+                <small>Explore what's possible</small>
+                <span class="category-arrow" aria-hidden="true">↗</span>
+            </button>
+
+            <button class="category-card category-pink" data-category="cybersecurity" aria-controls="bookContainer">
+                <span class="category-icon" aria-hidden="true">🔐</span>
+                <strong>Cybersecurity</strong>
+                <small>Learn to protect the digital world</small>
+                <span class="category-arrow" aria-hidden="true">↗</span>
+            </button>
+
+            <button class="category-card category-yellow" data-category="data-science" aria-controls="bookContainer">
+                <span class="category-icon" aria-hidden="true">📊</span>
+                <strong>Data Science</strong>
+                <small>Turn information into insight</small>
+                <span class="category-arrow" aria-hidden="true">↗</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- FEATURED BOOKS -->
+    <section class="section featured-section" id="featured">
+        <div class="section-heading heading-with-link">
+            <div>
+                <p class="eyebrow">A FEW GOOD PLACES TO START</p>
+                <h2>Handpicked for curious minds</h2>
+                <p>Explore a few suggestions from our sample collection.</p>
+            </div>
+            <a href="#catalogue" class="text-link">View all books ↗</a>
+        </div>
+
+        <div class="book-grid featured-grid" id="featuredGrid"></div>
+    </section>
+
+    <!-- PERSONALIZED RECOMMENDATIONS -->
+    <section class="recommend-section" id="recommend">
+        <div class="recommend-content">
+            <p class="eyebrow">LET'S FIND YOUR NEXT READ</p>
+            <h2>A little about you.<br><span>A better place to start.</span></h2>
+            <p class="recommend-description">
+                Tell SmartShelf what interests you and where you're starting
+                from. We'll find books that fit your learning goals.
+            </p>
+
+            <!-- Changed to a <form> for better semantics -->
+            <form class="recommend-form" id="recommendForm">
+                <div class="form-field">
+                    <label for="recommendSubject">What subject interests you?</label>
+                    <select id="recommendSubject" name="recommendSubject">
+                        <option value="Web Development">Web Development</option>
+                        <option value="Programming">Programming</option>
+                        <option value="Database Management">Database Management</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                        <option value="Computer Networks">Computer Networks</option>
+                        <option value="Algorithms">Algorithms</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="goal">What is your learning goal?</label>
+                    <select id="goal" name="goal">
+                        <option value="learn basics">Learn the basics</option>
+                        <option value="build projects">Build projects</option>
+                        <option value="prepare exams">Prepare for exams</option>
+                        <option value="deepen knowledge">Deepen my knowledge</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="recommendLevel">Your current experience</label>
+                    <select id="recommendLevel" name="recommendLevel">
+                        <option value="beginner">Just starting out</option>
+                        <option value="intermediate">I know the basics</option>
+                        <option value="advanced">Ready for a challenge</option>
+                    </select>
+                </div>
+
+                <button type="button" class="primary-button" id="recommendButton" aria-controls="recommendationGrid">
+                    Find My Recommendations ✦
+                </button>
+            </form>
+        </div>
+
+        <div class="recommend-side">
+            <div class="quote-card">
+                <span class="quote-icon" aria-hidden="true">“</span>
+                <p>Every expert was once a beginner who picked up a book.</p>
+                <span class="quote-footer">YOUR NEXT CHAPTER STARTS HERE</span>
+                <div class="quote-decoration" aria-hidden="true">✳</div>
+            </div>
+        </div>
+
+        <p id="resultMessage" class="result-message" aria-live="polite">
+            Your next discovery is waiting.
+        </p>
+
+        <div class="book-grid recommendation-grid" id="recommendationGrid"></div>
+    </section>
+
+    <!-- COMPLETE CATALOGUE -->
+    <section class="section catalogue-section" id="catalogue">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">THE SMARTSHELF COLLECTION</p>
+                <h2>Find your next favourite</h2>
+                <p>Search, explore and discover resources at your own pace.</p>
+            </div>
+        </div>
+
+        <form class="catalogue-toolbar" id="catalogueForm" role="search">
+            <div class="search-box">
+                <span aria-hidden="true">⌕</span>
+                <input type="search" id="searchInput"
+                    placeholder="Search titles, authors or topics..."
+                    aria-label="Search books"
+                    aria-controls="bookContainer">
+                <button type="button" id="clearSearch" aria-label="Clear search">×</button>
+            </div>
+
+            <select id="categoryFilter" aria-label="Filter by category" aria-controls="bookContainer">
+                <option value="all">All Categories</option>
+                <option value="programming">Programming</option>
+                <option value="web-development">Web Development</option>
+                <option value="backend">Backend</option>
+                <option value="database">Database</option>
+                <option value="ai-ml">AI & Machine Learning</option>
+                <option value="cybersecurity">Cybersecurity</option>
+                <option value="data-science">Data Science</option>
+            </select>
+
+            <select id="levelFilter" aria-label="Filter by difficulty" aria-controls="bookContainer">
+                <option value="all">All Levels</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+
+            <select id="sortFilter" aria-label="Sort books" aria-controls="bookContainer">
+                <option value="default">Recommended order</option>
+                <option value="title">Title A–Z</option>
+                <option value="author">Author A–Z</option>
+            </select>
+        </form>
+
+        <div class="catalogue-summary">
+            <p id="resultCount" aria-live="polite">Loading books...</p>
+            <button type="button" class="reset-button" id="resetFilters" aria-controls="bookContainer">
+                Reset filters ↺
+            </button>
+        </div>
+
+        <div class="book-grid catalogue-grid" id="bookContainer" aria-live="polite"></div>
+
+        <div id="emptyMessage" class="empty-state" hidden>
+            <span aria-hidden="true">🔎</span>
+            <h3>No books found just yet</h3>
+            <p>Try another search or clear some filters.</p>
+            <button type="button" class="primary-button" id="emptyReset">
+                Show all books
+            </button>
+        </div>
+    </section>
+
+    <!-- FAVOURITES -->
+    <section class="section favorites-section" id="favorites">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">YOUR LITTLE BOOK CORNER</p>
+                <h2>Books worth keeping close ♡</h2>
+                <p>Save books you love and come back to them later.</p>
+            </div>
+        </div>
+
+        <div id="favoritesGrid" class="book-grid" aria-live="polite"></div>
+
+        <div id="favoritesEmpty" class="favorites-empty">
+            <span aria-hidden="true">♡</span>
+            <h3>Your favourites will live here</h3>
+            <p>Tap the heart on any book card to build your personal reading list.</p>
+            <a href="#catalogue" class="text-link">Explore the catalogue ↗</a>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <a href="#home" class="logo footer-logo">Smart<span>Shelf</span><b>.</b></a>
+    <p>For the curious minds and the things they're yet to discover.</p>
+    <nav class="footer-links" aria-label="Footer Navigation">
+        <a href="#home">Home</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#favorites">Favourites</a>
+    </nav>
+    <small>SmartShelf · Student Web Application Project</small>
+</footer>
+
+<!-- BOOK DETAILS POPUP -->
+<div class="modal-backdrop" id="bookModal" hidden aria-hidden="true">
+    <div class="book-modal" role="dialog" aria-modal="true"
+        aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose"
+            type="button" aria-label="Close details">×</button>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+</body>
+</html>
