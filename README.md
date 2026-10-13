@@ -1,0 +1,1 @@
+# SmartShelfAI_integrated
